@@ -1,0 +1,21 @@
+{
+  "name": "blockchain_capstone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "keywords": [],
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "truffle test"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.3.1"
+  },
+  "devDependencies": {
+    "truffle-assertions": "^0.9.2"
+  },
+  "author": "dmallcott",
+  "license": "MIT"
+}
