@@ -50,7 +50,8 @@ contract ERC721Enumerable is ERC165, ERC721 {
         _addTokenToOwnerEnumeration(to, tokenId);
     }
 
-    function _mint(address to, uint256 tokenId) override internal {
+    // This virtual thing is so dodgy haha.
+    function _mint(address to, uint256 tokenId) override virtual internal {
         super._mint(to, tokenId);
 
         _addTokenToOwnerEnumeration(to, tokenId);

@@ -111,7 +111,8 @@ contract ERC721 is Pausable, ERC165 {
         return (spender == owner || getApproved(tokenId) == spender || isApprovedForAll(owner, spender));
     }
 
-    function _mint(address to, uint256 tokenId) internal {
+    // Really bad pattern to use virtual. Not bothered enough to create entrypoint methods.
+    function _mint(address to, uint256 tokenId) internal virtual {
         require(to != address(0), "ERC721: mint to the zero address");
         require(!_exists(tokenId), "ERC721: token already minted");
 
@@ -121,7 +122,7 @@ contract ERC721 is Pausable, ERC165 {
         emit Transfer(address(0), to, tokenId);
     }
 
-    function _transferFrom(address from, address to, uint256 tokenId) internal {
+    function _transferFrom(address from, address to, uint256 tokenId) internal virtual {
         require(ERC721.ownerOf(tokenId) == from, "ERC721: transfer from incorrect owner");
         require(to != address(0), "ERC721: transfer to the zero address");
 
